@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="DeskTopRecord" Height="350" Width="525">
     <Grid>
-        <Button Content="创建便签" HorizontalAlignment="Center" VerticalAlignment="Center" Click="CreateNote_Click"/>
+        <Button Content="创建便签" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CreateNote_Click" Margin="328,5,0,0"/>
+        <ListBox Name="NotesListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="200" SelectionChanged="NotesListBox_SelectionChanged" Margin="0,30,0,0"/>
+        <Button Content="Open Saved Note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30" Click="OpenSavedNoteButton_Click"/>
+        <Button Content="Delete Note" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30" Margin="155,0,0,0" Click="DeleteNoteButton_Click"/>
     </Grid>
 </Window>

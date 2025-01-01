@@ -3,31 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Note" Height="200" Width="300" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Topmost="True"
         MouseLeftButtonDown="Window_MouseLeftButtonDown">
-    <Grid Background="White" Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Click="ZoomInButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Resources/zoom_in.png" Width="16" Height="16"/>
-                    <TextBlock Text="+" Margin="5,0,0,0"/>
-                </StackPanel>
-            </Button>
-            <Button Click="ZoomOutButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Resources/zoom_out.png" Width="16" Height="16"/>
-                    <TextBlock Text="-" Margin="5,0,0,0"/>
-                </StackPanel>
-            </Button>
-            <Button Click="CloseButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Resources/close.png" Width="16" Height="16"/>
-                    <TextBlock Text="X" Margin="5,0,0,0"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        <TextBox Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Grid.Row="1"/>
-    </Grid>
+	<Grid Background="White" Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+			<Button Click="ZoomInButton_Click">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="Resources/zoom_in.png" Width="16" Height="16"/>
+					<TextBlock Text="+" Margin="5,0,0,0"/>
+				</StackPanel>
+			</Button>
+			<Button Click="ZoomOutButton_Click">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="Resources/zoom_out.png" Width="16" Height="16"/>
+					<TextBlock Text="-" Margin="5,0,0,0"/>
+				</StackPanel>
+			</Button>
+			<Button Click="CloseButton_Click">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="Resources/close.png" Width="16" Height="16"/>
+					<TextBlock Text="X" Margin="5,0,0,0"/>
+				</StackPanel>
+			</Button>
+			<Button Click="SaveButton_Click">
+				<StackPanel Orientation="Horizontal">
+					<Image Source="Resources/save.png" Width="16" Height="16"/>
+					<TextBlock Text="Save" Margin="5,0,0,0"/>
+				</StackPanel>
+			</Button>
+		</StackPanel>
+		<Grid Grid.Row="0" Margin="0,0,0,10">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="15*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<TextBox Name="NoteNameTextBox" TextChanged="NoteNameTextBox_TextChanged" Margin="0,0,151,0"/>
+			<TextBlock Name="NoteNamePlaceholder" Text="Enter note name" IsHitTestVisible="False" Foreground="Gray" VerticalAlignment="Center" Margin="2,0,154,0" FontSize="14"/>
+		</Grid>
+		<TextBox Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Grid.Row="1"/>
+	</Grid>
 </Window>
